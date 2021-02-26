@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hiidden file</title>
+</head>
+
+<body>
+    <h1>Hidden things by Sandeep Nadendla</h1>
+
+
+    <form>
+        <label for="Secret_Word">Secret the word</label>
+        <input type="password" id="Secret_Word" name="Secret_Word" placeholder="Enter the secret word"> <br>
+
+        <label for="guess_word">Guess the word</label>
+        <input type="text" id="guess_word" name="guess_word" placeholder="Enter a guess"> <br>
+
+        <input type="button" onclick="processGuess()" value="Check the guess">
+    </form>
+
+
+    <p id="display_Result"></p>
+
+    <div class="container">
+        <img src="daisy.jpg" onclick="rotateImage()" alt="Image" width="200" height="200" id="Image_flower">
+    </div>
+    <script>
+        var correct = 0;
+        var wrong = 0;
+        var currentImage = 0;
+        function processGuess() {
+            if (document.getElementById("Secret_Word").value == document.getElementById("guess_word").value) {
+                correct += 1;
+                alert("Congratulations");
+            }
+            else {
+                wrong += 1;
+                alert("Sorry");
+            }
+            var displayresult = "correct: " + correct + " " + "wrong: " + wrong;
+            document.getElementById("display_Result").innerHTML = displayresult;
+
+        }
+        
+
+        function rotateImage() {
+            switch (currentImage) {
+                case 0:
+                document.getElementById("Image_flower").src = "Nymphea.jpg";
+                currentImage=1;
+                    break;
+                case 1:
+                document.getElementById("Image_flower").src = "daisy.jpg";
+                currentImage=2;
+                    break;
+                default:
+                document.getElementById("Image_flower").src = "everlasting.jpg";
+                currentImage=0;
+                    break;
+
+            };
+        }
+    </script>
+
+</body>
+
+</html>
