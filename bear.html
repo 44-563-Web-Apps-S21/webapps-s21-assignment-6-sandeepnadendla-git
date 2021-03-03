@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bear page</title>
+</head>
+
+<body>
+    <h1>Sandeep Nadendla builds a bear</h1>
+    <form>
+        <input type="checkbox" id="hat_checkbox" name="hat_checkbox" value="hat">
+        <label for="hat_checkbox">hat</label>
+        <br>
+
+        <input type="checkbox" id="scarf_checkbox" name="scarf_checkbox" value="scarf">
+        <label for="scarf_checkbox">scarf</label>
+        <br>
+
+        <input type="checkbox" id="shirt_checkbox" name="shirt_checkbox" value="shirt">
+        <label for="shirt_checkbox">shirt</label>
+        <br>
+
+        <input type="button" onclick="startbear()" value="Start a bear">
+    </form>
+    <div id="My_result"></div>
+    <script>
+var my_bear={};
+function startbear (){
+    my_bear={};
+    
+    if(document.getElementById("hat_checkbox").checked){
+        my_bear["hat"]=true;
+    }else{
+        my_bear["hat"]=false;
+    }
+     if(document.getElementById("scarf_checkbox").checked){
+        my_bear["scarf"]=true;
+    }else{
+        my_bear["scarf"]=false;
+    }
+    if(document.getElementById("shirt_checkbox").checked){
+        my_bear["shirt"]=true;
+    }else{
+        my_bear["shirt"]=false;
+    }
+    
+    my_bear= JSON.stringify(my_bear);
+    document.getElementById("My_result").innerHTML=my_bear
+    my_bear= JSON.parse(my_bear)
+}
+
+
+    </script>
+</body>
+
+</html>
