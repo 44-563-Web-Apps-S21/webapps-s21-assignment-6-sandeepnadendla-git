@@ -22,34 +22,54 @@
 
         <input type="button" onclick="startbear()" value="Start a bear">
     </form>
+    <form>
+
+        <label for="Prpbx">Enter a property</label>
+        <input type="text" id="Prpbx" name="Prpbx" value="color">
+        <br>
+        <label for="valubox">Enter a value </label>
+        <input type="text" id="valubox" name="valubox">
+        <br>
+
+        <input type="button" onclick="updatebear()" value="Update the bear">
+    </form>
+
     <div id="My_result"></div>
     <script>
-var my_bear={};
-function startbear (){
-    my_bear={};
-    
-    if(document.getElementById("hat_checkbox").checked){
-        my_bear["hat"]=true;
-    }else{
-        my_bear["hat"]=false;
-    }
-     if(document.getElementById("scarf_checkbox").checked){
-        my_bear["scarf"]=true;
-    }else{
-        my_bear["scarf"]=false;
-    }
-    if(document.getElementById("shirt_checkbox").checked){
-        my_bear["shirt"]=true;
-    }else{
-        my_bear["shirt"]=false;
-    }
-    
-    my_bear= JSON.stringify(my_bear);
-    document.getElementById("My_result").innerHTML=my_bear
-    my_bear= JSON.parse(my_bear)
-}
+        var my_bear = {};
+        function startbear() {
+            my_bear = {};
 
+            if (document.getElementById("hat_checkbox").checked) {
+                my_bear["hat"] = true;
+            } else {
+                my_bear["hat"] = false;
+            }
+            if (document.getElementById("scarf_checkbox").checked) {
+                my_bear["scarf"] = true;
+            } else {
+                my_bear["scarf"] = false;
+            }
+            if (document.getElementById("shirt_checkbox").checked) {
+                my_bear["shirt"] = true;
+            } else {
+                my_bear["shirt"] = false;
+            }
 
+            my_bear = JSON.stringify(my_bear);
+            document.getElementById("My_result").innerHTML = my_bear;
+            my_bear = JSON.parse(my_bear);
+        }
+
+        function updatebear() {
+            var prop = document.getElementById("Prpbx").value;
+            var values = document.getElementById("valubox").value;
+            my_bear[prop] = values;
+
+            my_bear = JSON.stringify(my_bear);
+            document.getElementById("My_result").innerHTML = my_bear;
+            my_bear = JSON.parse(my_bear);
+        }
     </script>
 </body>
 
