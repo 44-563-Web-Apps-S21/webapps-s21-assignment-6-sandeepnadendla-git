@@ -3,44 +3,57 @@
 
 <head>
     <title>Arithematic operations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>Sandeep Nadendla computes</h1>
+    <h1 style="text-align: center;">Sandeep Nadendla computes</h1>
+    <div class="container" style="border: 9px solid #00ff90;padding: 20px;">
+        <form>
 
-    <form>
+            <label for="Frst_num">Enter a number</label>
+            <input type="number" class="form-control" id="Frst_num" name="Frst_num" value=10> <br>
 
-        <label for="Frst_num">Enter a number</label>
-        <input type="number" id="Frst_num" name="Frst_num" value=10> <br>
+            <label for="scnd_num">Enter a number</label>
+            <input type="number" class="form-control" id="scnd_num" name="scnd_num" value=2> <br>
 
-        <label for="scnd_num">Enter a number</label>
-        <input type="number" id="scnd_num" name="scnd_num" value=2> <br>
+            <button onclick="permutations()" class="btn btn-success" type="button">Compute</button>
 
-        <button onclick="permutations()" type="button">Compute</button>
+            <div id="txtDesp" class="form-control" style=" width: 179px; display: inline;"></div>
+        </form>
+    </div>
+    <div class="container" style="border: 9px solid #00ff90;padding: 20px;">
 
-    </form>
-    <div id="txtDesp"></div>
+        <form style="margin: 30px;">
+
+            <input type="radio" class="form-check-input" id="plus_radio" onclick="processRadio()" name="RadioProcess"
+                value="plus">
+            <label for="plus_radio" class="form-check-label">+ </label>
+            <br>
+            <input type="radio" class="form-check-input" id="minus_radio" onclick="processRadio()" name="RadioProcess"
+                value="minus">
+            <label for="minus_radio" class="form-check-label">- </label>
+            <br>
+            <input type="radio" class="form-check-input" id="times_radio" onclick="processRadio()" name="RadioProcess"
+                value="times">
+            <label for="times_radio" class="form-check-label">* </label>
+            <br>
+            <input type="radio" class="form-check-input" id="divide_radio" onclick="processRadio()" name="RadioProcess"
+                value="divide">
+            <label for="divide_radio" class="form-check-label">/ </label>
 
 
-    <form>
-
-        <input type="radio" id="plus_radio" onclick="processRadio()" name="RadioProcess" value="plus">
-        <label for="plus_radio">+ </label>
-        <br>
-        <input type="radio" id="minus_radio" onclick="processRadio()" name="RadioProcess" value="minus">
-        <label for="minus_radio">- </label>
-        <br>
-        <input type="radio" id="times_radio" onclick="processRadio()" name="RadioProcess" value="times">
-        <label for="times_radio">* </label>
-        <br>
-        <input type="radio" id="divide_radio" onclick="processRadio()" name="RadioProcess" value="divide">
-        <label for="divide_radio">/ </label>
 
 
+        </form>
+        <div id="txtDesp2" class="form-control" style=" width: 179px; display: inline;"></div>
 
-    </form>
-
-    <div id="txtDesp2"></div>
+    </div>
 
     <script>
 
@@ -51,7 +64,7 @@
             for (let i = firstinput; i >= (firstinput - scndinput + 1); i--) {
                 product *= i;
             }
-            document.getElementById("txtDesp").innerHTML = product;
+            document.getElementById("txtDesp").innerHTML = "Result is " + product;
 
 
         }
@@ -60,24 +73,24 @@
 
             var firstinput = parseInt(document.getElementById("Frst_num").value);
             var scndinput = parseInt(document.getElementById("scnd_num").value);
-           
+
             result = document.getElementById("txtDesp2")
             if (document.getElementById("plus_radio").checked) {
 
-                result.innerHTML = firstinput + scndinput;
+                result.innerHTML = "Result is " + (firstinput + scndinput);
 
             } else if (document.getElementById("minus_radio").checked) {
 
-                result.innerHTML = firstinput - scndinput;
+                result.innerHTML = "Result is " + (firstinput - scndinput);
 
             } else if (document.getElementById("times_radio").checked) {
 
-                result.innerHTML = firstinput * scndinput;
+                result.innerHTML = "Result is " + (firstinput * scndinput);
 
             } else {
 
-                result.innerHTML = firstinput / scndinput;
-                
+                result.innerHTML = "Result is " + (firstinput / scndinput);
+
             }
 
         }

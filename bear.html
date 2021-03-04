@@ -3,37 +3,56 @@
 
 <head>
     <title>Bear page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+.box_bear{
+    border: 9px solid #00ff90;
+    padding: 20px;
+    float: left;
+    margin: 10px;
+}
+    </style>
 </head>
 
 <body>
-    <h1>Sandeep Nadendla builds a bear</h1>
-    <form>
-        <input type="checkbox" id="hat_checkbox" name="hat_checkbox" value="hat">
-        <label for="hat_checkbox">hat</label>
-        <br>
+    <h1 style="text-align: center;">Sandeep Nadendla builds a bear</h1>
+    <div class="container">
+        <div class="col-md-5 box_bear" >
+            <form style="padding: 57px;">
+                <input type="checkbox" class="form-check-input" id="hat_checkbox" name="hat_checkbox" value="hat">
+                <label for="hat_checkbox"  class="form-check-label" >hat</label>
+                <br>
 
-        <input type="checkbox" id="scarf_checkbox" name="scarf_checkbox" value="scarf">
-        <label for="scarf_checkbox">scarf</label>
-        <br>
+                <input type="checkbox" class="form-check-input"  id="scarf_checkbox" name="scarf_checkbox" value="scarf">
+                <label for="scarf_checkbox" class="form-check-label" >scarf</label>
+                <br>
 
-        <input type="checkbox" id="shirt_checkbox" name="shirt_checkbox" value="shirt">
-        <label for="shirt_checkbox">shirt</label>
-        <br>
+                <input type="checkbox" class="form-check-input"  id="shirt_checkbox" name="shirt_checkbox" value="shirt">
+                <label for="shirt_checkbox" class="form-check-label" >shirt</label>
+                <br>
 
-        <input type="button" onclick="startbear()" value="Start a bear">
-    </form>
-    <form>
+                <input type="button" class="btn btn-success" onclick="startbear()" value="Start a bear">
+            </form>
+        </div>
+        <div class="col-md-5 box_bear" >
+            <form>
 
-        <label for="Prpbx">Enter a property</label>
-        <input type="text" id="Prpbx" name="Prpbx" value="color">
-        <br>
-        <label for="valubox">Enter a value </label>
-        <input type="text" id="valubox" name="valubox">
-        <br>
+                <label for="Prpbx">Enter a property</label>
+                <input type="text" class="form-control" id="Prpbx" name="Prpbx" value="color">
+                <br>
+                <label for="valubox">Enter a value </label>
+                <input type="text" class="form-control" id="valubox" name="valubox">
+                <br>
 
-        <input type="button" onclick="updatebear()" value="Update the bear">
-    </form>
-
+                <input type="button"  class="btn btn-success"  onclick="updatebear()" value="Update the bear">
+            </form>
+        </div>
+    </div>
     <div id="My_result"></div>
     <script>
         var my_bear = {};
